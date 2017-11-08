@@ -1,5 +1,22 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300|Raleway');
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Raleway', sans-serif;
+}
+
+::-webkit-input-placeholder {
+  color: #cfcfcf;
+}
+
+:-moz-placeholder {
+  color: #cfcfcf;
+}
+
+::-moz-placeholder {
+  color: #cfcfcf;
+}
+
+:-ms-input-placeholder {
+  color: #cfcfcf;
 }

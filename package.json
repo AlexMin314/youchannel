@@ -1,10 +1,15 @@
 {
-  "name": "youchannel",
-  "version": "0.1.0",
+  "name": "YouChannel",
+  "version": "0.1",
   "private": true,
   "dependencies": {
     "react": "^16.0.0",
-    "react-dom": "^16.0.0"
+    "react-dom": "^16.0.0",
+    "react-redux": "^5.0.6",
+    "react-router-dom": "^4.2.2",
+    "reactbulma": "^1.1.0",
+    "redux": "^3.7.2",
+    "styled-components": "^2.2.3"
   },
   "devDependencies": {
     "react-scripts": "1.0.17"
@@ -14,5 +19,10 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  }
+  },
+  "description": "Collaborative YouTube playlist",
+  "main": "index.js",
+  "repository": "https://github.com/AlexMin314/youchannel_frontend.git",
+  "author": "AlexMin314 <m98stone@gmail.com>",
+  "license": "MIT"
 }

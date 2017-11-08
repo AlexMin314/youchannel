@@ -1,0 +1,25 @@
+.homeContainer {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.homeContainer .homeContentWrapper {
+  /*width: 320px;*/
+  min-width: 25%;
+  height: auto;
+  color: white;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex: 1;
+}
+
+.homeContainer footer {
+  align-items: flex-end;
+  color: white;
+  font-size: 0.8rem;
+}
