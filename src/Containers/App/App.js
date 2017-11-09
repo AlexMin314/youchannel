@@ -7,11 +7,13 @@ import Home from '../Home/Home'
 
 const App = (props) => {
   return (
-    <div className='appContainer'>
-      <Router>
+    <Router>
+      <div className='appContainer'>
         <Route exact path='/' component={Home} />
-      </Router>
-    </div>
+        <Route path='/:channel' component={Home} />
+        <Route path='/user/:id' component={Home} />
+      </div>
+    </Router>
   )
 }
 

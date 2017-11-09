@@ -18,7 +18,6 @@ const Texts = ({ type,
     text-align: ${position};
     margin: ${margin}px 0px;
   `
-
   return (
     <TextBox>
       {txt}

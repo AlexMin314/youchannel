@@ -14,6 +14,10 @@ const Input = styled.input`
   transition: all 300ms ease-in-out;
 `
 
-const ChannelJoin = ({ placeholder }) => <Input placeholder={placeholder}/>
+const ChannelJoin = ({ placeholder, onChange, onKeyPress }) => (
+  <Input placeholder={ placeholder }
+         onChange={ onChange }
+         onKeyPress={ onKeyPress } />
+)
 
 export default ChannelJoin
