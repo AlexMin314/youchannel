@@ -11,9 +11,6 @@
 }
 
 .homeContainer .homeContentWrapper {
-  /*width: 320px;*/
-  /*min-width: 25%;*/
-  /*min-height: 400px;*/
   height: auto;
   color: white;
   display: flex;

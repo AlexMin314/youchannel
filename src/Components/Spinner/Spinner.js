@@ -2,10 +2,12 @@ import React from 'react'
 
 import './Spinner.css'
 
-const Spinner = (props) => {
+const Spinner = ({ isFetching }) => {
   return (
-    <div class="cssload-container">
-      <span class="cssload-loading"></span>
+    <div className="cssload-container">
+      {isFetching ? (
+          <span className="cssload-loading"></span>
+      ) : null}
     </div>
   )
 }

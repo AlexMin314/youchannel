@@ -32,19 +32,14 @@ class Channel extends Component {
   render() {
     return (
       <div className='channelContainer'>
-        { this.state.isFetching ? <Spinner /> : null }
-        <ChannelWelcome {...this.props} enterChk={this.state.enterChk} />
-
+        <Spinner isFetching={ this.state.isFetching } />
+        <ChannelWelcome { ...this.props } name={ 'fade' } enterChk={ this.state.enterChk }/>
+        {!this.state.enterChk ?  (
+          <div style={{color:'white'}}>test</div>
+        ) : null}
       </div>
     )
   }
 }
 
 export default Channel
-
-// <ReactCSSTransitionGroup
-//   transitionName="example"
-//   transitionAppear={true}
-//   transitionAppearTimeout={500}
-//   transitionEnter={false}
-//   transitionLeave={false}>

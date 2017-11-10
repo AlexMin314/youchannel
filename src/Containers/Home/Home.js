@@ -17,7 +17,9 @@ const Home = (props) => {
         <Texts txt={`Join a channel to get started.`}/>
 
          <ChannelJoin placeholder={`Search / Join a channel`}
-           onKeyPress={ (e) => e.key === 'Enter' ? props.history.push(`/${e.target.value.split(' ').join('')}`) : null}/>
+           onKeyPress={ (e) => e.key === 'Enter'
+             ? props.history.push(`/${e.target.value.split(' ').join('')}`)
+             : null}/>
 
         <Texts txt={`Login with`} position='center'/>
         {LoginContatiner(['google','facebook', 'twitter', 'linkedin'])}

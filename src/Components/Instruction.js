@@ -1,13 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
+import ReactAnimation from './ReactAnimation'
 
 const InsWrapper = styled.div`
   height: 100%;
-  background: inherit;
+  width: 100%;
+  background: black;
   padding-top: 150px;
   color: white;
   text-align: center;
+  position: absolute;
+  z-index: 3;
 `
 
 export const Instruction = ({txt, channel}) => (
@@ -18,17 +22,13 @@ export const Instruction = ({txt, channel}) => (
 )
 
 export const ChannelWelcome = (props) => {
+  console.log(props)
   return (
-    <ReactCSSTransitionGroup
-      transitionName="example"
-      transitionAppear={true}
-      transitionAppearTimeout={500}
-      transitionLeave={true}
-      transitionLeaveTimeout={300}>
+    <ReactAnimation Appear Leave name={ 'fade' }>
       {props.enterChk ? (
-      <Instruction txt={ `Hello, ${'user'}` }
-                   channel={ props.match.params.channel }/>
-               ) : null }
-    </ReactCSSTransitionGroup>
+        <Instruction txt={ `Hello, ${'user'}` }
+          channel={ props.match.params.channel }/>
+      ) : null}
+    </ReactAnimation>
   )
 }
