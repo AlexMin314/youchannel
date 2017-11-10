@@ -1,12 +1,3 @@
 .appContainer {
   height: 100vh;
-  background: linear-gradient(300deg,#9742d0,#308de8);
-  animation: gradient 12s ease infinite;
-  background-size: 400% 400%;
-}
-
-@keyframes gradient {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
 }

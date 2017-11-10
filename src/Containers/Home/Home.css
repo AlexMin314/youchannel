@@ -5,6 +5,9 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background: linear-gradient(300deg,#9742d0,#308de8);
+  animation: gradient 12s ease infinite;
+  background-size: 400% 400%;
 }
 
 .homeContainer .homeContentWrapper {
@@ -23,4 +26,10 @@
   align-items: flex-end;
   color: white;
   font-size: 0.8rem;
+}
+
+@keyframes gradient {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
 }
