@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Button, Icon } from 'reactbulma'
 
-export const MenuBtn = ({ name, right, center, middle, bottom }) => {
+export const MenuBtn = ({ name, right, center, middle, bottom, fn }) => {
   const custumStyle = {
     borderRadius:'100%',
     border: 'none',
@@ -16,8 +16,8 @@ export const MenuBtn = ({ name, right, center, middle, bottom }) => {
     transition: 'all 300ms ease-in-out'
   }
   return (
-    <Button style={custumStyle} outlined primary large
-            onClick={(e) => console.log(name)}>
+    <Button style={ custumStyle } outlined primary large
+            onClick={fn}>
       <Icon>
         <i className={`fa fa-lg fa-${name.toLowerCase()}`}/>
       </Icon>

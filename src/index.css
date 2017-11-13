@@ -7,6 +7,10 @@ body, html {
   background-color: black;
 }
 
+#remove-all-styles {
+   all: revert !important;
+ }
+
 ::-webkit-input-placeholder {
   color: #cfcfcf;
 }

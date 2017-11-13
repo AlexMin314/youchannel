@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
+import { Transition, CSSTransition, TransitionGroup } from 'react-transition-group'
 import ReactAnimation from './ReactAnimation'
 
 const InsWrapper = styled.div`
@@ -24,10 +24,8 @@ export const Instruction = ({txt, channel}) => (
 export const ChannelWelcome = (props) => {
   return (
     <ReactAnimation Appear Leave name={ 'fade' }>
-      {props.enterChk ? (
-        <Instruction txt={ `Hello, ${'user'}` }
-          channel={ props.match.params.channel }/>
-      ) : null}
+      { props.enterChk && <Instruction txt={ `Hello, ${'user'}` }
+                                       channel={ props.match.params.channel }/> }
     </ReactAnimation>
   )
 }

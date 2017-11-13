@@ -4,6 +4,8 @@ import styled from 'styled-components'
 import Spinner from '../../Components/Spinner/Spinner'
 import { ChannelWelcome } from '../../Components/Instruction'
 import { MenuBtn } from '../../Components/MenuBtn'
+import SideNavBar from '../../Components/SideNavBar'
+import {SideNav, SideNavItem, Button} from 'react-materialize'
 
 import './Channel.css'
 
@@ -38,10 +40,10 @@ class Channel extends Component {
 
         {!this.state.enterChk ?  (
           <div>
-            <MenuBtn name={'bars'} />
-            <MenuBtn name={'home'} right />
-            <MenuBtn name={'step-forward'} right middle />
-            <MenuBtn name={'commenting'} right bottom />
+            <SideNavBar trigger={<div><MenuBtn name={'bars'}/></div>}/>
+            <MenuBtn name={'home'} right fn={e => this.props.history.push(`/`)}/>
+            <MenuBtn name={'step-forward'} right middle fn={e => console.log('next play')}/>
+            <MenuBtn name={'commenting'} right bottom fn={e => console.log('open chat')}/>
           </div>
         ) : null}
 
