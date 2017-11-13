@@ -1,28 +1,26 @@
 .homeContainer {
   height: 100%;
-  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: linear-gradient(300deg,#9742d0,#308de8);
+  background: linear-gradient(300deg,#9742d0,#308de8,#00d1b2);
   animation: gradient 12s ease infinite;
   background-size: 400% 400%;
 }
 
 .homeContainer .homeContentWrapper {
-  height: auto;
   color: white;
   display: flex;
+  flex: 1;
   justify-content: center;
   flex-direction: column;
-  flex: 1;
 }
 
 .homeContainer footer {
-  align-items: flex-end;
   color: white;
   font-size: 0.8rem;
+  margin-bottom: 5px;
 }
 
 @keyframes gradient {

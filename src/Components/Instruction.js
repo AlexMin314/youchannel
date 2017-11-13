@@ -22,7 +22,6 @@ export const Instruction = ({txt, channel}) => (
 )
 
 export const ChannelWelcome = (props) => {
-  console.log(props)
   return (
     <ReactAnimation Appear Leave name={ 'fade' }>
       {props.enterChk ? (

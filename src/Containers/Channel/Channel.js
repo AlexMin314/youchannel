@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 import Spinner from '../../Components/Spinner/Spinner'
 import { ChannelWelcome } from '../../Components/Instruction'
+import { MenuBtn } from '../../Components/MenuBtn'
 
 import './Channel.css'
 
@@ -33,10 +34,17 @@ class Channel extends Component {
     return (
       <div className='channelContainer'>
         <Spinner isFetching={ this.state.isFetching } />
-        <ChannelWelcome { ...this.props } name={ 'fade' } enterChk={ this.state.enterChk }/>
+        <ChannelWelcome { ...this.props } enterChk={ this.state.enterChk }/>
+
         {!this.state.enterChk ?  (
-          <div style={{color:'white'}}>test</div>
+          <div>
+            <MenuBtn name={'bars'} />
+            <MenuBtn name={'home'} right />
+            <MenuBtn name={'step-forward'} right middle />
+            <MenuBtn name={'commenting'} right bottom />
+          </div>
         ) : null}
+
       </div>
     )
   }

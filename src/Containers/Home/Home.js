@@ -13,7 +13,7 @@ const Home = (props) => {
       <div className='homeContentWrapper'>
 
         <Texts type='title' txt={`YOUTALKS`} size={4} margin={20}/>
-        <Texts txt={`Collobarative youTube playlist.`}/>
+        <Texts txt={`Sharing and watching videos together.`}/>
         <Texts txt={`Join a channel to get started.`}/>
 
          <ChannelJoin placeholder={`Search / Join a channel`}
@@ -31,7 +31,3 @@ const Home = (props) => {
 }
 
 export default Home
-
-
-// <ChannelJoin placeholder={`Search / Join a channel`}
-//   onKeyPress={ (e) => e.key === 'Enter' ? props.history.push(`/${e.target.value.split(' ').join('')}`) : null}/>
