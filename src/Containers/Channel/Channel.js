@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 import Spinner from '../../Components/Spinner/Spinner'
 import { ChannelWelcome } from '../../Components/Instruction'
-import { MenuBtn } from '../../Components/MenuBtn'
+import { MenuBtn, HorizontalFab } from '../../Components/MenuBtn'
 import SideNavBar from '../../Components/SideNavBar'
 import {SideNav, SideNavItem, Button} from 'react-materialize'
 
@@ -32,6 +32,7 @@ class Channel extends Component {
     }, 2000)
   }
 
+  // 왼쪽 클릭하면 Fab 보여주고 유저 클릭하면 사이드 나브바?
   render() {
     return (
       <div className='channelContainer'>
@@ -40,8 +41,8 @@ class Channel extends Component {
 
         {!this.state.enterChk ?  (
           <div>
-            <SideNavBar trigger={<div><MenuBtn name={'bars'}/></div>}/>
-            <MenuBtn name={'home'} right fn={e => this.props.history.push(`/`)}/>
+            <HorizontalFab/>
+            <MenuBtn name={'bars'}/>
             <MenuBtn name={'step-forward'} right middle fn={e => console.log('next play')}/>
             <MenuBtn name={'commenting'} right bottom fn={e => console.log('open chat')}/>
           </div>
@@ -53,3 +54,5 @@ class Channel extends Component {
 }
 
 export default Channel
+//<SideNavBar trigger={<div><MenuBtn name={'bars'}/></div>}/>
+            // <MenuBtn name={'home'} right fn={e => this.props.history.push(`/`)}/>
