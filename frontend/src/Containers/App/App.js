@@ -10,9 +10,9 @@ const App = (props) => {
   return (
     <Router>
       <div className='appContainer'>
-        <Route exact path='/' component={Home} />
-        <Route path='/:channel' component={Channel} />
-        <Route path='/user/:id' component={Home} />
+        <Route exact path='/' component={ Home } />
+        <Route path='/:channel' component={ Channel } />
+        <Route path='/user/:id' component={ Home } />
       </div>
     </Router>
   )

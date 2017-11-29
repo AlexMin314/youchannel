@@ -19,8 +19,9 @@ const ReactAnimation = ({children, name, Appear, Atime=500, Leave, Ltime=500}) =
       transitionAppear={ Appear }
       transitionAppearTimeout={ Atime }
       transitionLeave={ Leave }
-      transitionLeaveTimeout={ Ltime }>
-        { children }
+      transitionLeaveTimeout={ Ltime }
+    >
+      { children }
     </ReactCSSTransitionGroup>
   )
 }
