@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-// import { Button, Icon } from 'reactbulma'
+import PropTypes from 'prop-types'
 import { SideNav, SideNavItem, Button } from 'react-materialize'
 
 export const MenuBtn = ({ name, right, center, middle, bottom, fn }) => {

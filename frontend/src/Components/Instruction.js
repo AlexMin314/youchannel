@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 import { Transition, CSSTransition, TransitionGroup } from 'react-transition-group'
 import ReactAnimation from './ReactAnimation'
 
@@ -23,9 +24,23 @@ export const Instruction = ({txt, channel}) => (
 
 export const ChannelWelcome = (props) => {
   return (
-    <ReactAnimation Appear Leave name={ 'fade' }>
-      { props.enterChk && <Instruction txt={ `Hello, ${'user'}` }
-                                       channel={ props.match.params.channel }/> }
+    <ReactAnimation
+      Appear
+      Leave
+      name={ 'fade' }>
+      { props.enterChk && <Instruction
+                            txt={ `Hello, ${'user'}` }
+                            channel={ props.match.params.channel }/> }
     </ReactAnimation>
   )
+}
+
+Instruction.PropTypes = {
+  txt: PropTypes.string,
+  channel: PropTypes.string
+}
+
+Instruction.defaultProps = {
+  txt: 'no text',
+  channel: 'no channel'
 }

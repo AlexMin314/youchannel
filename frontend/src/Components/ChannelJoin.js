@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 
 const Input = styled.input`
   width: 100%;
@@ -16,8 +17,17 @@ const Input = styled.input`
 `
 
 const ChannelJoin = ({ placeholder, onKeyPress }) => (
-  <Input className='browser-default' browserDefault placeholder={ placeholder }
-         onKeyPress={ onKeyPress } />
+  <Input
+    className='browser-default'
+    browserDefault
+    placeholder={ placeholder }
+    onKeyPress={ onKeyPress }
+  />
 )
+
+ChannelJoin.PropTypes = {
+  placeholder: PropTypes.string,
+  onKeyPress: PropTypes.function
+}
 
 export default ChannelJoin
