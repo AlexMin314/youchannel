@@ -1,10 +1,10 @@
 import express from 'express';
+import app from '../app'
 
 const router = express.Router();
 
 /* GET index page. */
 router.get('/api/user', (req, res, next) => {
-  console.log('--Home!!')
   // res.send('respond with a resource');
   res.json([{
   id: 1,

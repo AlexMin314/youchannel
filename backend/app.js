@@ -1,15 +1,21 @@
-import bodyParser from 'body-parser';
-import cookieParser from 'cookie-parser';
-import Debug from 'debug';
-import express from 'express';
-import logger from 'morgan';
-// import favicon from 'serve-favicon';
-import path from 'path';
-import sassMiddleware from 'node-sass-middleware';
-import index from './routes/index';
+import bodyParser from 'body-parser'
+import cookieParser from 'cookie-parser'
+import Debug from 'debug'
+import express from 'express'
+import logger from 'morgan'
+import path from 'path'
+// import sassMiddleware from 'node-sass-middleware'
+// import favicon from 'serve-favicon'
 
-const app = express();
-const debug = Debug('backend:app');
+// router
+import index from './routes/index'
+
+
+export const app = express()
+const debug = Debug('backend:app')
+
+export const server = require('http').Server(app)
+const io = require('socket.io')(server)
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -24,16 +30,26 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.use(cookieParser());
-app.use(sassMiddleware({
-  src: path.join(__dirname, 'public'),
-  dest: path.join(__dirname, 'public'),
-  indentedSyntax: true,
-  sourceMap: true
-}));
+// app.use(sassMiddleware({
+//   src: path.join(__dirname, 'public'),
+//   dest: path.join(__dirname, 'public'),
+//   indentedSyntax: true,
+//   sourceMap: true
+// }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', index);
-console.log('router added')
+
+// routers
+app.use('/', index)
+io.on('connection', (socket) => {
+  console.log('connected')
+
+  socket.on('chat', (data) => {
+    console.log('socket')
+
+    console.log(data)
+  })
+})
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
@@ -58,5 +74,3 @@ process.on('uncaughtException', (err) => {
   debug('Caught exception: %j', err);
   process.exit(1);
 });
-
-export default app;

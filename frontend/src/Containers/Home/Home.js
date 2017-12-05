@@ -6,6 +6,8 @@ import Texts from '../../Components/Texts'
 import ChannelJoin from '../../Components/ChannelJoin'
 import { LoginContatiner } from '../../Components/SocialLogin'
 
+import socket from '../../API/socketAPI'
+
 
 class Home extends Component {
   constructor(props) {
@@ -18,6 +20,8 @@ class Home extends Component {
       // .then(res => console.log(res))
     .then(res => res.json())
     .then(data => console.log(data))
+
+    socket.emit('chat', 'hello')
   }
 
   render() {
