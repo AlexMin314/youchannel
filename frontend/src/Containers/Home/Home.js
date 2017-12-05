@@ -16,12 +16,16 @@ class Home extends Component {
   }
 
   componentDidMount() {
+    socket.emit('chat', 'hello')
+
+    socket.on('fromserver', (data) => {
+      console.log(data)
+    })
     fetch('api/user')
       // .then(res => console.log(res))
     .then(res => res.json())
     .then(data => console.log(data))
 
-    socket.emit('chat', 'hello')
   }
 
   render() {

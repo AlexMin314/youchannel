@@ -1,18 +1,11 @@
-import express from 'express';
-import app from '../app'
+import express from 'express'
 
-const router = express.Router();
+import homeRouter from './home'
+import socketRouter from './websocket'
 
-/* GET index page. */
-router.get('/api/user', (req, res, next) => {
-  // res.send('respond with a resource');
-  res.json([{
-  id: 1,
-  username: "samsepi0l"
-}, {
-  id: 2,
-  username: "D0loresH4ze"
-}]);
-});
+const index = (app, io) => {
+  socketRouter(io)
+  app.use('/', homeRouter)
+}
 
-export default router;
+export default index

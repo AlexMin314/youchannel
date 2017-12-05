@@ -6,50 +6,51 @@ import logger from 'morgan'
 import path from 'path'
 // import sassMiddleware from 'node-sass-middleware'
 // import favicon from 'serve-favicon'
+import http from 'http'
+import Socket from 'socket.io'
 
-// router
-import index from './routes/index'
+// import routers
+import indexRoute from './routes/index'
 
 
+// create express application
 export const app = express()
 const debug = Debug('backend:app')
-
-export const server = require('http').Server(app)
-const io = require('socket.io')(server)
+// create server
+export const server = http.Server(app)
+const io = Socket(server)
+// register routers
+indexRoute(app, io)
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'pug');
+app.set('views', path.join(__dirname, 'views'))
+app.set('view engine', 'pug')
 
 // uncomment after placing your favicon in /public
 // app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.use(logger('dev'));
-app.use(bodyParser.json());
+app.use(logger('dev'))
+app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({
   extended: false
-}));
+}))
 
-app.use(cookieParser());
+app.use(cookieParser())
 // app.use(sassMiddleware({
 //   src: path.join(__dirname, 'public'),
 //   dest: path.join(__dirname, 'public'),
 //   indentedSyntax: true,
 //   sourceMap: true
 // }));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')))
 
 
-// routers
-app.use('/', index)
-io.on('connection', (socket) => {
-  console.log('connected')
+/* middleware */
+app.use(function (req, res, next) {
+  req.socket = io
+  res.locals.user = {name: 'alex'}
+  next();
+});
 
-  socket.on('chat', (data) => {
-    console.log('socket')
-
-    console.log(data)
-  })
-})
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
