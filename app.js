@@ -19,8 +19,6 @@ const debug = Debug('backend:app')
 // create server
 export const server = http.Server(app)
 const io = Socket(server)
-// register routers
-indexRoute(app, io)
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'))
@@ -43,15 +41,24 @@ app.use(cookieParser())
 // }));
 app.use(express.static(path.join(__dirname, 'public')))
 
-
-/* middleware */
+/*
+  middleware
+ */
 app.use(function (req, res, next) {
   req.socket = io
   res.locals.user = {name: 'alex'}
   next();
 });
 
+/*
+  Routers
+ */
+indexRoute(app, io)
 
+
+/*
+  Error Handlers
+ */
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
   const err = new Error('Not Found');
