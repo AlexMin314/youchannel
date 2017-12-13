@@ -40,7 +40,7 @@ class Home extends Component {
            <ChannelJoin
              placeholder={`Search / Join a channel`}
              onKeyPress={ (e) => e.key === 'Enter'
-               ? this.props.history.push(`/${e.target.value.split(' ').join('')}`)
+               ? this.props.history.push(`/channel/${e.target.value.split(' ').join('')}`)
                : null}
            />
 

@@ -1,5 +1,7 @@
 const websocket = (io) => {
 
+  // global connection events
+  // if need namespace connection, I can put that into the route.
   io.on('connect', (socket) => {
     console.log('New socket connection : ', socket.id)
 

@@ -41,10 +41,9 @@ class Channel extends Component {
 
         {!this.state.enterChk ?  (
           <div>
-            <HorizontalFab/>
             <MenuBtn name={'bars'}/>
             <MenuBtn name={'step-forward'} right middle fn={e => console.log('next play')}/>
-            <MenuBtn name={'commenting'} right bottom fn={e => console.log('open chat')}/>
+            <MenuBtn name={'comments-o'} right top fn={e => console.log('open chat')}/>
           </div>
         ) : null}
 

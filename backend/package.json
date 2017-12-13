@@ -4,7 +4,8 @@
   "private": true,
   "main": "app.js",
   "scripts": {
-    "start": "npm-run-all --parallel start:*",
+    "startall": "npm-run-all --parallel start:*",
+    "start": "nodemon ./bin/start",
     "start:frontend": "nodemon ./bin/start",
     "start:backend": "cd frontend && yarn react-scripts start",
     "install": "(cd frontend && yarn) && (cd .. && yarn)",
@@ -23,7 +24,6 @@
     "morgan": "~1.7.0",
     "node-sass-middleware": "^0.9.8",
     "nodemon": "^1.12.1",
-    "pug": "^2.0.0-beta11",
     "serve-favicon": "~2.3.2",
     "socket.io": "^2.0.4"
   },

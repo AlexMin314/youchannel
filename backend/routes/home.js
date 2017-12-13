@@ -17,4 +17,10 @@ router.get('/api/user', (req, res, next) => {
 }]);
 });
 
+
+router.get('/channel/:channel', (req, res, next) => {
+  console.log('hit')
+  res.send({txt:req.params})
+})
+
 export default router;

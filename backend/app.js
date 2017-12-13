@@ -21,8 +21,8 @@ export const server = http.Server(app)
 const io = Socket(server)
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'))
-app.set('view engine', 'pug')
+// app.set('views', path.join(__dirname, 'frontend/public'))
+// app.set('view engine', 'pug')
 
 // uncomment after placing your favicon in /public
 // app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -39,11 +39,16 @@ app.use(cookieParser())
 //   indentedSyntax: true,
 //   sourceMap: true
 // }));
-app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, 'frontend/public')))
 
 /*
   middleware
  */
+
+ // app.get('*', (req, res) => {
+ //   res.sendFile(path.resolve(__dirname, 'frontend/public', 'index.html'));
+ // });
+
 app.use(function (req, res, next) {
   req.socket = io
   res.locals.user = {name: 'alex'}

@@ -11,7 +11,7 @@ const App = (props) => {
     <Router>
       <div className='appContainer'>
         <Route exact path='/' component={ Home } />
-        <Route path='/:channel' component={ Channel } />
+        <Route path='/channel/:channel' component={ Channel } />
         <Route path='/user/:id' component={ Home } />
       </div>
     </Router>

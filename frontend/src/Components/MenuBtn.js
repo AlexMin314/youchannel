@@ -24,8 +24,9 @@ export const MenuBtn = ({ name, right, center, middle, bottom, fn }) => {
       waves='light'
       className='transparent'
       onClick={fn}
+      icon='mode_edit'
     >
-      <i className={`fa fa-lg fa-${name.toLowerCase()}`}/>
+      {/*<i className={`fa fa-lg fa-${name.toLowerCase()}`}/>*/}
     </Button>
   )
 }
