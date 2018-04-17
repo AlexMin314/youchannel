@@ -1,4 +1,4 @@
-/* Duck pattern
+ Duck pattern
 import { createAction, handleActions } from 'redux-actions';
 import { getExample } from '../API/ExampleAPI';
 
@@ -19,7 +19,7 @@ export default handleActions({
     },
 
 }, initialState);
-*/
+
 
 /*
 import {  } from '';
